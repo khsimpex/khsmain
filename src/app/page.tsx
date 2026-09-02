@@ -138,7 +138,7 @@ export default function Home() {
               <div className="group relative overflow-hidden bg-slate-100">
                 <img alt="Knitted Home Furnishing"
                   className="img-zoom w-full h-64 sm:h-80 md:h-96 lg:h-115 object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                  src="https://lh3.googleusercontent.com/aida/AEtjO1UtSNUpEbtqj-yuK5LNz84QcdSEnUFrJ445sJXp0Vb8co1HGpsPvGxm7LgBn5gAEuLNZX_JYuuIfJNsDudN3OWnQca4NQCpJxULc648RngXTMlp84S7JbQhF7QNRxb7nrBCcRSQgi7LgzoMbpmuq2zp-b6aV2qRjtSAG9uJdFKEytdGEHiCMpYzyoUtU00enKtLh0llErIGrWogVc8YyBV7xsqVq76TJmoVeqLdJtVvZFf3fyzAYkLTbw" />
+                  src="./Ribbed Knit Blankets.jpg" />
                 <div className="p-5 sm:p-6 lg:p-8 bg-white border-t lg:border-t-0 lg:border-r border-ink lg:absolute lg:bottom-0 lg:left-0 lg:max-w-lg shadow-lg">
                   <span className="font-technical text-xs text-ink font-bold uppercase mb-1 block">[ CATEGORY 01 ]</span>
                   <h3 className="font-headline text-xl sm:text-2xl lg:text-3xl xl:text-4xl uppercase leading-tight mb-2 sm:mb-3 text-ink font-bold">
@@ -174,14 +174,14 @@ export default function Home() {
                 <div className="h-64 sm:h-80 md:h-96 overflow-hidden bg-slate-100 group">
                   <img alt="Knitted Apparel"
                     className="img-zoom w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                    src="https://lh3.googleusercontent.com/aida/AEtjO1Xj14l_lxAveSiX9sKAC_VtE1ToSZotVlgXPVkGrNUCh7XWrOzkZrV-6POpHD5nWSnLmnjiPpRSt70f5pqniIDWg6SK_QQMvyx-Kp_lqeC-dcU22n9E0MUUQ8TzV3w6b2W3t7UAj_pI2NdvWtppcKy5qQrac8x1bbSrtT6CwXRhWRrM-M1yW0nkccwCDkS1lUUArAtFkVY4PkujUpA0C17lzqsC4yV5VCMS9uY4dXXr5B1aLsFR-V1L-yk" />
+                    src="./Premium-Fabricss-main.png" />
                 </div>
               </div>
               <div className="flex flex-col justify-between">
                 <div className="h-64 sm:h-80 md:h-96 overflow-hidden bg-slate-100 group border-b border-ink">
                   <img alt="Knitted Shoe Uppers"
                     className="img-zoom w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                    src="https://lh3.googleusercontent.com/aida/AEtjO1WCkHpnlO_9-R9ohxXBrxZld_R_ZbXmEj4MO4UJ4ov_TTIjKEtj6_-W9cDomtwNtJgec5hMrYV326t04FiT4hPv5gnV95B_eIDk-msMNvN26an078LUvcn7Aezki9iKSNcuK7gaJO7cyKGoz-kqf4XzSWVYNCLdXT6m2B6k1kJ0BM3xV1TFEPtnaUGCGM0rh_2_V8_8owseW9I9i_kPtbvp_Hxid_tv8IOY61q9PEt-TthUlMm7WItzBQ" />
+                    src="./seamless.png" />
                 </div>
                 <div className="p-6 sm:p-8 md:p-10 bg-ink text-white">
                   <span className="font-technical text-xs text-blue-200 font-bold uppercase mb-2 block">[ CATEGORY 03 ]</span>
