@@ -25,9 +25,8 @@ const tabData: Record<string, TabItem[]> = {
   ],
   apparel: [
     { title: "Knitted Pullovers", desc: "Premium quality sweaters with intricate patterns", image: "/kitted pullovers.png", },
-    { title: "Polo Shirts", desc: "Classic designs with modern knitting", image: "/Polo Shrits.png" },
-    { title: "Cardigans", desc: "Stylish and comfortable everyday wear", image: "/Cadigans.png" },
-    { title: "Custom Designs", desc: "Unique knitted apparel patterns", image: "/Custom Designs.png" },
+    { title: "Knitted Polo Shirts", desc: "Classic designs with modern knitting", image: "/Polo Shrits.png" },
+    { title: "Knitted Polo", desc: "Stylish and comfortable everyday wear", image: "/Cadigans.png" },
   ],
   shoes: [
     { title: "Seamless Construction", desc: "Advanced flyknit technology for footwear", image: "/Seamless.png" },

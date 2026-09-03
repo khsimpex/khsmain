@@ -22,6 +22,7 @@ export default function Navbar({ menuOpen, toggleMobileMenu }: NavbarProps) {
             className="w-auto h-10 sm:h-12 object-contain group-hover:opacity-90 transition-opacity"
             priority
             unoptimized
+            loading="eager"
           />
         </Link>
 

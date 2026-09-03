@@ -23,6 +23,7 @@ export default function MobileMenu({ menuOpen, closeMobileMenu }: MobileMenuProp
             className="w-auto h-10 object-contain"
             priority
             unoptimized
+            loading="eager"
           />
         </div>
         <button onClick={closeMobileMenu} className="w-10 h-10 flex items-center justify-center bg-ink-light hover:bg-ink hover:text-white text-ink rounded-full transition-tech" aria-label="Close Menu">

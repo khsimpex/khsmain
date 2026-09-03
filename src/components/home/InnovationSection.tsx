@@ -27,20 +27,12 @@ export default function InnovationSection() {
                 <div className="flex items-center gap-2 border-l-2 border-surface-tint pl-3 py-1 bg-surface-container-low/50">Better breathability</div>
               </div>
             </div>
-            <div className="md:w-2/5 p-8 flex items-center justify-center bg-white border-t md:border-t-0 md:border-l border-ink-subtle/30">
-              <div className="w-full aspect-square bg-[#333333] flex items-center justify-center max-w-70">
-                <span className="font-headline text-2xl sm:text-3xl font-bold text-white/20 uppercase tracking-widest">SEAMLESS</span>
-              </div>
-            </div>
+
           </div>
 
           {/* Block 2 */}
           <div data-reveal className="bg-white flex flex-col-reverse md:flex-row border-l-4 border-surface-tint shadow-sm">
-            <div className="md:w-2/5 p-8 flex items-center justify-center bg-white border-b md:border-b-0 md:border-r border-ink-subtle/30">
-              <div className="w-full aspect-square bg-[#333333] flex items-center justify-center max-w-70">
-                <span className="font-headline text-2xl sm:text-3xl font-bold text-white/20 uppercase tracking-widest">PRECISION</span>
-              </div>
-            </div>
+
             <div className="p-8 sm:p-12 md:w-3/5 flex flex-col justify-center">
               <h3 className="font-headline text-2xl sm:text-3xl font-bold text-ink mb-4">Precision Engineering</h3>
               <p className="font-body text-sm sm:text-base text-on-surface-variant mb-8 leading-relaxed">
@@ -69,11 +61,7 @@ export default function InnovationSection() {
                 <div className="flex items-center gap-2 border-l-2 border-surface-tint pl-3 py-1 bg-surface-container-low/50">Bio-based performance fibers</div>
               </div>
             </div>
-            <div className="md:w-2/5 p-8 flex items-center justify-center bg-white border-t md:border-t-0 md:border-l border-ink-subtle/30">
-              <div className="w-full aspect-square bg-[#333333] flex items-center justify-center max-w-70">
-                <span className="font-headline text-2xl sm:text-3xl font-bold text-white/20 uppercase tracking-widest">ECO</span>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
