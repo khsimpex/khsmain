@@ -20,8 +20,8 @@ const tabData: Record<string, TabItem[]> = {
   home: [
     { title: "Decorative Cushion Covers", desc: "Custom designs with intricate knitted patterns", image: "./cushion-covers.jpg" },
     { title: "Knitted Throws", desc: "Soft, cozy blankets for comfort", image: '/Knitted Throws.png' },
-    { title: "Premium Fabrics", desc: "High-quality knitted textiles", image: "./Premium-Fabricss-main.png" },
-    { title: "Ribbed Knit Blankets", desc: "Durable construction with excellent finish", image: './ribbed Knit Blankets.jpg' },
+    { title: "Premium Fabrics", desc: "High-quality knitted textiles", image: "./Custom Designs.png" },
+    { title: "Ribbed Knit Blankets", desc: "Durable construction with excellent finish", image: './Ribbed Blanket.png' },
   ],
   apparel: [
     { title: "Knitted Pullovers", desc: "Premium quality sweaters with intricate patterns", image: "/kitted pullovers.png", },
@@ -34,10 +34,14 @@ const tabData: Record<string, TabItem[]> = {
     { title: "Precision Engineering", desc: "Different knit zones for performance", image: "/Precision.png" },
   ],
   materials: [
-    { title: "Cotton & Blends", desc: "Premium quality cotton and cotton-blend yarns" },
-    { title: "Polyester & Lycra", desc: "Performance blends for stretch, durability, and moisture wicking" },
-    { title: "Organic Cotton", desc: "GOTS-certified organic cotton available upon request" },
-
+    { title: "Acrylic Yarn", desc: "Lightweight, soft, and warm synthetic yarn" },
+    { title: "Chenille Yarn", desc: "Luxuriously soft yarn with a fuzzy, velvety texture" },
+    { title: "Cotton Yarn", desc: "Breathable and durable natural fiber for everyday comfort" },
+    { title: "Mohair Blend", desc: "Premium blend offering exceptional warmth and luster" },
+    { title: "Nylon & Viscose Blends", desc: "Engineered for stretch, shape retention, and softness" },
+    { title: "Polyester (High Bulk)", desc: "Voluminous, lightweight yarn with excellent durability" },
+    { title: "Recycled Yarns", desc: "Eco-friendly options including GRS-certified materials" },
+    { title: "Wool", desc: "Classic natural fiber providing superior insulation and quality" }
   ]
 };
 
@@ -82,27 +86,43 @@ export default function ProductTabs() {
             {tabs.find(t => t.id === activeTab)?.label}
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
-            {tabData[activeTab as keyof typeof tabData].map((item, index) => (
-              <div key={index} className="card-lift bg-white border-2 border-ink shadow-sm flex flex-col h-full overflow-hidden group max-w-sm mx-auto w-full">
-                <div className="h-64 sm:h-72 w-full bg-slate-100 border-b-2 border-ink overflow-hidden relative">
-                  <div className="absolute inset-0 flex items-center justify-center text-surface-tint group-hover:scale-105 transition-transform duration-700 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200 to-slate-300">
-                    {item.image ? (
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-                    ) : (
-                      <span className="material-symbols-outlined text-5xl opacity-50">photo_library</span>
-                    )}
+          {activeTab === 'materials' ? (
+            <div className="max-w-5xl mx-auto bg-slate-50 border-2 border-ink p-8 sm:p-12">
+              {/* Scrollable Container for Infinite Items */}
+              <div className="max-h-[400px] overflow-y-auto pr-2 sm:pr-4 custom-scrollbar">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  {tabData.materials.map((item, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-surface-tint shrink-0">verified</span>
+                      <h4 className="font-headline text-sm sm:text-base uppercase font-bold text-ink">{item.title}</h4>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
+              {tabData[activeTab as keyof typeof tabData].map((item, index) => (
+                <div key={index} className="card-lift bg-white border-2 border-ink shadow-sm flex flex-col h-full overflow-hidden group max-w-sm mx-auto w-full">
+                  <div className="h-64 sm:h-72 w-full bg-slate-100 border-b-2 border-ink overflow-hidden relative">
+                    <div className="absolute inset-0 flex items-center justify-center text-surface-tint group-hover:scale-105 transition-transform duration-700 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200 to-slate-300">
+                      {item.image ? (
+                        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                      ) : (
+                        <span className="material-symbols-outlined text-5xl opacity-50">photo_library</span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="p-5 sm:p-6 flex flex-col grow text-center bg-white">
+                    <h4 className="font-headline text-lg uppercase font-bold text-ink mb-2">{item.title}</h4>
+                    <p className="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
-                <div className="p-5 sm:p-6 flex flex-col grow text-center bg-white">
-                  <h4 className="font-headline text-lg uppercase font-bold text-ink mb-2">{item.title}</h4>
-                  <p className="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

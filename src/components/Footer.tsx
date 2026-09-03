@@ -4,6 +4,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const footerLinks = [
+  { name: "PRIVACY POLICY", href: "/" },
+  { name: "TERMS OF SERVICE", href: "/" },
+  { name: "GLOBAL LOGISTICS", href: "/manufacturing/" },
+  { name: "QUALITY ASSURANCE", href: "/quality/" },
+  { name: "CONTACT US", href: "/contact" },
+];
+
 export default function Footer() {
   const [year, setYear] = useState<number>(new Date().getFullYear());
 
@@ -30,10 +38,15 @@ export default function Footer() {
 
           {/* Footer Navigation */}
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-6 text-on-surface-variant uppercase font-medium text-[10px] sm:text-xs">
-            <Link href="#about" className="hover:text-ink transition-tech py-1">PRIVACY POLICY</Link>
-            <Link href="#capabilities" className="hover:text-ink transition-tech py-1">TERMS OF SERVICE</Link>
-            <Link href="#products" className="hover:text-ink transition-tech py-1">GLOBAL LOGISTICS</Link>
-            <Link href="#commitment" className="hover:text-ink transition-tech py-1">QUALITY ASSURANCE</Link>
+            {footerLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.href} 
+                className="hover:text-ink border-b-2 border-transparent hover:border-ink transition-tech py-1"
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
         </div>

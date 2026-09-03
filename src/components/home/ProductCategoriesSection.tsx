@@ -15,7 +15,7 @@ export default function ProductCategoriesSection() {
           <div className="group relative overflow-hidden bg-slate-100">
             <img alt="Knitted Home Furnishing"
               className="img-zoom w-full h-64 sm:h-80 md:h-96 lg:h-115 object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-              src="./Ribbed Knit Blankets.jpg" />
+              src='/Knitted Throws.png' />
             <div className="p-5 sm:p-6 lg:p-8 bg-white border-t lg:border-t-0 lg:border-r border-ink lg:absolute lg:bottom-0 lg:left-0 lg:max-w-lg shadow-lg">
               <span className="font-technical text-xs text-ink font-bold uppercase mb-1 block">[ CATEGORY 01 ]</span>
               <h3 className="font-headline text-xl sm:text-2xl lg:text-3xl xl:text-4xl uppercase leading-tight mb-2 sm:mb-3 text-ink font-bold">

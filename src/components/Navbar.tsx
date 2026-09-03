@@ -7,6 +7,18 @@ interface NavbarProps {
   toggleMobileMenu: () => void;
 }
 
+const navlinks = [
+  { name: "Home", href: "/" },
+  { name: "Knitted Shoe Uppers", href: "/knitted-shoe-uppers" },
+  { name: "Knitwear", href: "/knitwear" },
+  { name: "Home Furnishings", href: "/home-furnishings" },
+  { name: "OEM/ODM", href: "/oem-odm" },
+  { name: "Manufacturing", href: "/manufacturing" },
+  { name: "Quality", href: "/quality" },
+  { name: "Sustainability", href: "/sustainability" },
+  { name: "Technology", href: "/technology" },
+]
+
 export default function Navbar({ menuOpen, toggleMobileMenu }: NavbarProps) {
   return (
     <header className="bg-white/95 backdrop-blur-md w-full sticky top-0 border-b border-ink z-40 transition-all">
@@ -27,13 +39,16 @@ export default function Navbar({ menuOpen, toggleMobileMenu }: NavbarProps) {
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex gap-4 xl:gap-8 items-center font-technical text-xs uppercase tracking-wider text-ink font-medium">
-          <Link className="hover:text-ink-dark py-1 border-b-2 border-transparent hover:border-ink transition-tech whitespace-nowrap" href="#about">ENGINEERING</Link>
-          <Link className="hover:text-ink-dark py-1 border-b-2 border-transparent hover:border-ink transition-tech whitespace-nowrap" href="#capabilities">CAPABILITIES</Link>
-          <Link className="hover:text-ink-dark py-1 border-b-2 border-transparent hover:border-ink transition-tech whitespace-nowrap" href="#products">PRODUCTS</Link>
-          <Link className="hover:text-ink-dark py-1 border-b-2 border-transparent hover:border-ink transition-tech whitespace-nowrap" href="#innovation">INNOVATION</Link>
-          <Link className="hover:text-ink-dark py-1 border-b-2 border-transparent hover:border-ink transition-tech whitespace-nowrap" href="#commitment">COMMITMENT</Link>
-          <Link className="hover:text-ink-dark py-1 border-b-2 border-transparent hover:border-ink transition-tech whitespace-nowrap" href="#contact">CONTACT</Link>
+        <nav className="hidden lg:flex gap-3 xl:gap-5 items-center font-technical text-[10px] xl:text-xs uppercase tracking-wider text-ink font-bold">
+          {navlinks.map((link) => (
+            <Link
+              key={link.href}
+              className="hover:text-ink-dark py-1 border-b-2 border-transparent hover:border-ink transition-tech whitespace-nowrap"
+              href={link.href}
+            >
+              {link.name}
+            </Link>
+          ))}
         </nav>
 
         {/* Actions */}

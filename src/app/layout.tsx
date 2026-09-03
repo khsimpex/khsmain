@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
+import ModalProvider from "../components/ModalProvider";
 import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
@@ -56,7 +57,9 @@ export default function RootLayout({
       >
         <Toaster position="bottom-center" toastOptions={{ className: 'font-body text-sm font-medium border border-ink' }} />
         <Header />
-        {children}
+        <ModalProvider>
+          {children}
+        </ModalProvider>
         <Footer />
         <ScrollReveal />
       </body>

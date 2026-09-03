@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import RFQModal from "../components/RFQModal";
 import ProductTabs from "../components/ProductTabs";
 
 // Home Components
@@ -14,14 +12,6 @@ import CommitmentSection from "../components/home/CommitmentSection";
 import ContactSection from "../components/home/ContactSection";
 
 export default function Home() {
-  const [rfqModalOpen, setRfqModalOpen] = useState(false);
-
-  useEffect(() => {
-    const handleOpenRfq = () => setRfqModalOpen(true);
-    window.addEventListener('open-rfq', handleOpenRfq);
-    return () => window.removeEventListener('open-rfq', handleOpenRfq);
-  }, []);
-
   return (
     <>
       <main className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 grow">
@@ -32,10 +22,8 @@ export default function Home() {
         <CapabilitiesSection />
         <InnovationSection />
         <CommitmentSection />
-        <ContactSection onOpenRfq={() => setRfqModalOpen(true)} />
+        <ContactSection onOpenRfq={() => window.dispatchEvent(new Event('open-rfq'))} />
       </main>
-
-      <RFQModal isOpen={rfqModalOpen} onClose={() => setRfqModalOpen(false)} />
     </>
   );
 }

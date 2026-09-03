@@ -7,6 +7,18 @@ interface MobileMenuProps {
   closeMobileMenu: () => void;
 }
 
+const navlinks = [
+  { name: "Home", href: "/" },
+  { name: "Knitted Shoe Uppers", href: "/knitted-shoe-uppers" },
+  { name: "Knitwear Manufacturing", href: "/knitwear" },
+  { name: "Home Furnishings", href: "/home-furnishings" },
+  { name: "OEM / ODM & Private Label", href: "/oem-odm" },
+  { name: "Manufacturing Capabilities", href: "/manufacturing" },
+  { name: "Quality", href: "/quality" },
+  { name: "Sustainability", href: "/sustainability" },
+  { name: "Technology", href: "/technology" },
+]
+
 export default function MobileMenu({ menuOpen, closeMobileMenu }: MobileMenuProps) {
   return (
     <nav
@@ -31,50 +43,21 @@ export default function MobileMenu({ menuOpen, closeMobileMenu }: MobileMenuProp
         </button>
       </div>
 
-      {/* Nav Links (centered) */}
-      <div className="flex-1 flex flex-col justify-center px-8 sm:px-12 gap-1 relative z-10">
-        <Link onClick={closeMobileMenu} href="#about" className="group py-3 sm:py-4 border-b border-slate-100 flex justify-between items-center">
-          <div className="flex items-baseline gap-3">
-            <span className="font-technical text-[10px] sm:text-xs text-ink/40 font-bold">01</span>
-            <span className="font-headline text-xl sm:text-2xl uppercase text-ink font-bold group-hover:text-ink-dark transition-tech">Engineering</span>
-          </div>
-          <span className="material-symbols-outlined text-lg text-ink/30 group-hover:text-ink transition-tech">arrow_forward</span>
-        </Link>
-        <Link onClick={closeMobileMenu} href="#capabilities" className="group py-3 sm:py-4 border-b border-slate-100 flex justify-between items-center">
-          <div className="flex items-baseline gap-3">
-            <span className="font-technical text-[10px] sm:text-xs text-ink/40 font-bold">02</span>
-            <span className="font-headline text-xl sm:text-2xl uppercase text-ink font-bold group-hover:text-ink-dark transition-tech">Capabilities</span>
-          </div>
-          <span className="material-symbols-outlined text-lg text-ink/30 group-hover:text-ink transition-tech">arrow_forward</span>
-        </Link>
-        <Link onClick={closeMobileMenu} href="#products" className="group py-3 sm:py-4 border-b border-slate-100 flex justify-between items-center">
-          <div className="flex items-baseline gap-3">
-            <span className="font-technical text-[10px] sm:text-xs text-ink/40 font-bold">03</span>
-            <span className="font-headline text-xl sm:text-2xl uppercase text-ink font-bold group-hover:text-ink-dark transition-tech">Products</span>
-          </div>
-          <span className="material-symbols-outlined text-lg text-ink/30 group-hover:text-ink transition-tech">arrow_forward</span>
-        </Link>
-        <Link onClick={closeMobileMenu} href="#innovation" className="group py-3 sm:py-4 border-b border-slate-100 flex justify-between items-center">
-          <div className="flex items-baseline gap-3">
-            <span className="font-technical text-[10px] sm:text-xs text-ink/40 font-bold">04</span>
-            <span className="font-headline text-xl sm:text-2xl uppercase text-ink font-bold group-hover:text-ink-dark transition-tech">Innovation</span>
-          </div>
-          <span className="material-symbols-outlined text-lg text-ink/30 group-hover:text-ink transition-tech">arrow_forward</span>
-        </Link>
-        <Link onClick={closeMobileMenu} href="#commitment" className="group py-3 sm:py-4 border-b border-slate-100 flex justify-between items-center">
-          <div className="flex items-baseline gap-3">
-            <span className="font-technical text-[10px] sm:text-xs text-ink/40 font-bold">05</span>
-            <span className="font-headline text-xl sm:text-2xl uppercase text-ink font-bold group-hover:text-ink-dark transition-tech">Commitment</span>
-          </div>
-          <span className="material-symbols-outlined text-lg text-ink/30 group-hover:text-ink transition-tech">arrow_forward</span>
-        </Link>
-        <Link onClick={closeMobileMenu} href="#contact" className="group py-3 sm:py-4 flex justify-between items-center">
-          <div className="flex items-baseline gap-3">
-            <span className="font-technical text-[10px] sm:text-xs text-ink/40 font-bold">06</span>
-            <span className="font-headline text-xl sm:text-2xl uppercase text-ink font-bold group-hover:text-ink-dark transition-tech">Contact</span>
-          </div>
-          <span className="material-symbols-outlined text-lg text-ink/30 group-hover:text-ink transition-tech">arrow_forward</span>
-        </Link>
+      <div className="flex-1 flex flex-col justify-start px-8 sm:px-12 gap-1 relative z-10 overflow-y-auto pt-4 pb-6">
+        {navlinks.map((link, i) => (
+          <Link
+            key={link.href}
+            onClick={closeMobileMenu}
+            href={link.href}
+            className={`group py-3 sm:py-4 ${i !== navlinks.length - 1 ? 'border-b border-slate-100' : ''} flex justify-between items-center`}
+          >
+            <div className="flex items-baseline gap-3">
+              <span className="font-technical text-[10px] sm:text-xs text-ink/40 font-bold">0{i + 1}</span>
+              <span className="font-headline text-xl sm:text-2xl uppercase text-ink font-bold group-hover:text-ink-dark transition-tech">{link.name}</span>
+            </div>
+            <span className="material-symbols-outlined text-lg text-ink/30 group-hover:text-ink transition-tech">arrow_forward</span>
+          </Link>
+        ))}
       </div>
 
       {/* Bottom CTA */}
