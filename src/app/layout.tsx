@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${oswald.variable} ${jetbrainsMono.variable} font-body text-base antialiased selection:bg-ink selection:text-white flex flex-col min-h-screen`}
       >
+        <Toaster position="bottom-center" toastOptions={{ className: 'font-body text-sm font-medium border border-ink' }} />
         <Header />
         {children}
         <Footer />

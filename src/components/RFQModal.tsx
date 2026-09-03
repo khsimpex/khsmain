@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { sendRFQEmail } from "@/actions/sendRFQ";
+import { toast } from "react-hot-toast";
 
 interface RFQModalProps {
   isOpen: boolean;
@@ -9,14 +10,11 @@ interface RFQModalProps {
 }
 
 export default function RFQModal({ isOpen, onClose }: RFQModalProps) {
-  const [success, setSuccess] = useState(false);
-
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
-      setSuccess(false); // Reset on close
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -27,16 +25,13 @@ export default function RFQModal({ isOpen, onClose }: RFQModalProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
-
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+
+  if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
-    setSuccess(false);
 
     const formData = new FormData(e.currentTarget);
     const result = await sendRFQEmail(formData);
@@ -44,12 +39,12 @@ export default function RFQModal({ isOpen, onClose }: RFQModalProps) {
     setLoading(false);
 
     if (result.success) {
-      setSuccess(true);
+      toast.success("Request logged! Our export desk will reply within 24 hours.");
       setTimeout(() => {
         onClose();
-      }, 2200);
+      }, 1500);
     } else {
-      setError(result.error || "Failed to send request. Please try again.");
+      toast.error(result.error || "Failed to send request. Please try again.");
     }
   };
 
@@ -74,7 +69,7 @@ export default function RFQModal({ isOpen, onClose }: RFQModalProps) {
         <form onSubmit={handleSubmit} className="space-y-3 font-body text-sm">
           <div>
             <label className="block font-technical text-[11px] sm:text-xs uppercase font-bold text-ink mb-1">Company / Brand Name *</label>
-            <input type="text" name="companyName" required placeholder="e.g. Acme Apparel Corp" className="w-full px-3 py-2 bg-slate-50 border border-slate-300 text-slate-800 text-sm focus:border-ink focus:outline-none rounded-none" />
+            <input type="text" name="companyName" required placeholder="e.g. you company name" className="w-full px-3 py-2 bg-slate-50 border border-slate-300 text-slate-800 text-sm focus:border-ink focus:outline-none rounded-none" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -107,18 +102,6 @@ export default function RFQModal({ isOpen, onClose }: RFQModalProps) {
             <span>{loading ? "Transmitting..." : "Transmit RFQ"}</span>
             <span className="material-symbols-outlined text-sm">send</span>
           </button>
-
-          {error && (
-            <div className="p-2 sm:p-3 bg-red-50 border border-red-500 text-red-700 font-technical text-xs text-center mt-2">
-              {error}
-            </div>
-          )}
-
-          {success && (
-            <div className="p-2 sm:p-3 bg-blue-50 border border-ink text-ink font-technical text-xs text-center mt-2">
-              Thank you! Your request has been logged. Our export desk will reply within 24 hours.
-            </div>
-          )}
         </form>
       </div>
     </div>
