@@ -19,10 +19,10 @@ type TabItem = {
 
 const tabData: Record<string, TabItem[]> = {
   home: [
-    { title: "Decorative Cushion Covers", desc: "Custom designs with intricate knitted patterns", image: "./cushion-covers.jpg", alt: "Custom patterned decorative knitted cushion covers for wholesale home decor" },
+    { title: "Decorative Cushion Covers", desc: "Custom designs with intricate knitted patterns", image: "/cushion-covers.jpg", alt: "Custom patterned decorative knitted cushion covers for wholesale home decor" },
     { title: "Knitted Throws", desc: "Soft, cozy blankets for comfort", image: '/Knitted Throws.png', alt: "Premium soft knitted throw blankets stacked in neutral colors" },
-    { title: "Premium Fabrics", desc: "High-quality knitted textiles", image: "./Custom Designs.png", alt: "Close-up detail of high-quality complex knitted fabric textures" },
-    { title: "Ribbed Knit Blankets", desc: "Durable construction with excellent finish", image: './Ribbed Blanket.png', alt: "Durable ribbed knit blankets showing thick gauge stitching" },
+    { title: "Premium Fabrics", desc: "High-quality knitted textiles", image: "/Custom Designs.png", alt: "Close-up detail of high-quality complex knitted fabric textures" },
+    { title: "Ribbed Knit Blankets", desc: "Durable construction with excellent finish", image: '/Ribbed Blanket.png', alt: "Durable ribbed knit blankets showing thick gauge stitching" },
   ],
   apparel: [
     { title: "Knitted Pullovers", desc: "Premium quality sweaters with intricate patterns", image: "/kitted pullovers.png", alt: "Premium quality knitted pullovers with intricate jacquard patterns" },
