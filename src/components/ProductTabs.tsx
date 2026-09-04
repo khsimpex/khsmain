@@ -30,8 +30,8 @@ const tabData: Record<string, TabItem[]> = {
     { title: "Knitted Polo", desc: "Stylish and comfortable everyday wear", image: "/Cadigans.png", alt: "Stylish knitted cardigans for everyday comfort and layering" },
   ],
   shoes: [
-    { title: "Seamless Construction", desc: "Advanced flyknit technology for footwear", image: "/Seamless.png", alt: "Close-up of seamless 3D knitted shoe upper highlighting breathable mesh zones" },
-    { title: "Color Variations", desc: "Available in multiple colors and patterns", image: "/Color varient.png", alt: "Multiple color variations of 3D knitted shoe uppers for performance footwear" },
+    { title: "Seamless Construction", desc: "Advanced flyknit technology for footwear", image: "/seamless.png", alt: "Close-up of seamless 3D knitted shoe upper highlighting breathable mesh zones" },
+    { title: "Color Variations", desc: "Available in multiple colors and patterns", image: "/color varient.png", alt: "Multiple color variations of 3D knitted shoe uppers for performance footwear" },
     { title: "Precision Engineering", desc: "Different knit zones for performance", image: "/Precision.png", alt: "Precision engineered shoe upper with targeted stretch and rigid support zones" },
   ],
   materials: [
