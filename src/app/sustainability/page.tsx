@@ -1,8 +1,37 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Sustainable Textile Manufacturing & Zero Waste | KHS Impex',
+  description: 'Commitment to sustainable apparel production using eco-friendly yarns, zero-waste 3D knitting, and closed-loop water recycling systems.',
+  alternates: {
+    canonical: '/sustainability',
+  },
+  openGraph: {
+    title: 'Sustainable Textile Manufacturing & Zero Waste | KHS Impex',
+    description: 'Commitment to sustainable apparel production using eco-friendly yarns, zero-waste 3D knitting, and closed-loop water recycling systems.',
+    url: '/sustainability',
+  },
+};
+
+import GlobalCTA from "../../components/GlobalCTA";
+import Link from "next/link";
 
 export default function SustainabilityPage() {
   return (
     <main className="w-full flex-grow flex flex-col pt-20 sm:pt-24 lg:pt-32 bg-surface-container-lowest">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://www.khsimpex.com" },
+              { "@type": "ListItem", position: 2, name: "Sustainability", item: "https://www.khsimpex.com/sustainability" }
+            ]
+          })
+        }}
+      />
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 lg:py-20 border-b border-ink/10">
         <div className="max-w-4xl">
           <span className="font-technical text-sm text-surface-tint font-bold tracking-widest uppercase mb-4 block">
@@ -12,7 +41,7 @@ export default function SustainabilityPage() {
             Sustainable Manufacturing
           </h1>
           <p className="font-body text-base sm:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-            Committed to a greener future without compromising on quality or scale. We integrate eco-friendly raw materials, zero-waste 3D knitting processes, and energy-efficient infrastructure to drastically reduce the environmental footprint of our manufacturing operations.
+            Committed to a greener future without compromising on quality or scale. We integrate eco-friendly raw materials, zero-waste 3D knitting processes, and energy-efficient infrastructure to drastically reduce the environmental footprint of our <Link href="/manufacturing" className="text-surface-tint hover:underline font-bold">manufacturing operations</Link>.
           </p>
         </div>
       </section>
@@ -96,6 +125,7 @@ export default function SustainabilityPage() {
           </div>
         </div>
       </section>
+      <GlobalCTA />
     </main>
   );
 }

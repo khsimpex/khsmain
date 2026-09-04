@@ -1,9 +1,49 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: '3D Knitting Technology & Infrastructure | KHS Impex',
+  description: 'Next-generation computerized flat knitting machines and CAD/CAM software for precision multi-gauge apparel production and virtual prototyping.',
+  alternates: {
+    canonical: '/technology',
+  },
+  openGraph: {
+    title: '3D Knitting Technology & Infrastructure | KHS Impex',
+    description: 'Next-generation computerized flat knitting machines and CAD/CAM software for precision multi-gauge apparel production and virtual prototyping.',
+    url: '/technology',
+  },
+};
 
 import Image from "next/image";
+import GlobalCTA from "../../components/GlobalCTA";
+
 export default function TechnologyPage() {
   return (
     <main className="w-full flex-grow flex flex-col pt-20 sm:pt-24 lg:pt-32 bg-surface-container-lowest">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.khsimpex.com" },
+                { "@type": "ListItem", position: 2, name: "Technology", item: "https://www.khsimpex.com/technology" }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "TechArticle",
+              headline: "3D Knitting Technology & Computerized CNC Manufacturing",
+              description: "Explore KHS Impex's advanced 3D knitting technology, fully fashioned apparel production, and CNC flat-knitting capabilities.",
+              publisher: {
+                "@type": "Organization",
+                name: "KHS Impex"
+              }
+            }
+          ])
+        }}
+      />
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 lg:py-20 border-b border-ink/10">
         <div className="max-w-4xl">
           <span className="font-technical text-sm text-surface-tint font-bold tracking-widest uppercase mb-4 block">
@@ -37,7 +77,7 @@ export default function TechnologyPage() {
             </div>
           </div>
           <div className="lg:w-1/2 bg-white/5 aspect-video flex items-center justify-center border border-white/10 relative overflow-hidden">
-            <Image src="/Computerized Flat Knitting.jpeg" alt="Computerized Flat Knitting" fill className="object-cover" />
+            <Image src="/Computerized Flat Knitting.jpeg" alt="Advanced computerized flat knitting machine operating in the KHS Impex technology center" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
           </div>
         </div>
       </section>
@@ -105,6 +145,7 @@ export default function TechnologyPage() {
           </div>
         </div>
       </section>
+      <GlobalCTA />
     </main>
   );
 }

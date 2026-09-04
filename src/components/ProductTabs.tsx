@@ -14,24 +14,25 @@ type TabItem = {
   title: string;
   desc: string;
   image?: string;
+  alt?: string;
 };
 
 const tabData: Record<string, TabItem[]> = {
   home: [
-    { title: "Decorative Cushion Covers", desc: "Custom designs with intricate knitted patterns", image: "./cushion-covers.jpg" },
-    { title: "Knitted Throws", desc: "Soft, cozy blankets for comfort", image: '/Knitted Throws.png' },
-    { title: "Premium Fabrics", desc: "High-quality knitted textiles", image: "./Custom Designs.png" },
-    { title: "Ribbed Knit Blankets", desc: "Durable construction with excellent finish", image: './Ribbed Blanket.png' },
+    { title: "Decorative Cushion Covers", desc: "Custom designs with intricate knitted patterns", image: "./cushion-covers.jpg", alt: "Custom patterned decorative knitted cushion covers for wholesale home decor" },
+    { title: "Knitted Throws", desc: "Soft, cozy blankets for comfort", image: '/Knitted Throws.png', alt: "Premium soft knitted throw blankets stacked in neutral colors" },
+    { title: "Premium Fabrics", desc: "High-quality knitted textiles", image: "./Custom Designs.png", alt: "Close-up detail of high-quality complex knitted fabric textures" },
+    { title: "Ribbed Knit Blankets", desc: "Durable construction with excellent finish", image: './Ribbed Blanket.png', alt: "Durable ribbed knit blankets showing thick gauge stitching" },
   ],
   apparel: [
-    { title: "Knitted Pullovers", desc: "Premium quality sweaters with intricate patterns", image: "/kitted pullovers.png", },
-    { title: "Knitted Polo Shirts", desc: "Classic designs with modern knitting", image: "/Polo Shrits.png" },
-    { title: "Knitted Polo", desc: "Stylish and comfortable everyday wear", image: "/Cadigans.png" },
+    { title: "Knitted Pullovers", desc: "Premium quality sweaters with intricate patterns", image: "/kitted pullovers.png", alt: "Premium quality knitted pullovers with intricate jacquard patterns" },
+    { title: "Knitted Polo Shirts", desc: "Classic designs with modern knitting", image: "/Polo Shrits.png", alt: "Classic men's knitted polo shirts featuring breathable mesh structures" },
+    { title: "Knitted Polo", desc: "Stylish and comfortable everyday wear", image: "/Cadigans.png", alt: "Stylish knitted cardigans for everyday comfort and layering" },
   ],
   shoes: [
-    { title: "Seamless Construction", desc: "Advanced flyknit technology for footwear", image: "/Seamless.png" },
-    { title: "Color Variations", desc: "Available in multiple colors and patterns", image: "/Color varient.png" },
-    { title: "Precision Engineering", desc: "Different knit zones for performance", image: "/Precision.png" },
+    { title: "Seamless Construction", desc: "Advanced flyknit technology for footwear", image: "/Seamless.png", alt: "Close-up of seamless 3D knitted shoe upper highlighting breathable mesh zones" },
+    { title: "Color Variations", desc: "Available in multiple colors and patterns", image: "/Color varient.png", alt: "Multiple color variations of 3D knitted shoe uppers for performance footwear" },
+    { title: "Precision Engineering", desc: "Different knit zones for performance", image: "/Precision.png", alt: "Precision engineered shoe upper with targeted stretch and rigid support zones" },
   ],
   materials: [
     { title: "Acrylic Yarn", desc: "Lightweight, soft, and warm synthetic yarn" },
@@ -107,7 +108,7 @@ export default function ProductTabs() {
                   <div className="h-64 sm:h-72 w-full bg-slate-100 border-b-2 border-ink overflow-hidden relative">
                     <div className="absolute inset-0 flex items-center justify-center text-surface-tint group-hover:scale-105 transition-transform duration-700 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200 to-slate-300">
                       {item.image ? (
-                        <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                        <Image src={item.image} alt={item.alt || item.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
                       ) : (
                         <span className="material-symbols-outlined text-5xl opacity-50">photo_library</span>
                       )}

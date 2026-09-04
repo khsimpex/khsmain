@@ -1,4 +1,20 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Apparel Manufacturing Capabilities | KHS Impex',
+  description: 'State-of-the-art apparel manufacturing facility offering computerized flat knitting, precision dyeing, automated assembly, and high-density embroidery.',
+  alternates: {
+    canonical: '/manufacturing',
+  },
+  openGraph: {
+    title: 'Apparel Manufacturing Capabilities | KHS Impex',
+    description: 'State-of-the-art apparel manufacturing facility offering computerized flat knitting, precision dyeing, automated assembly, and high-density embroidery.',
+    url: '/manufacturing',
+  },
+};
+
+import GlobalCTA from "../../components/GlobalCTA";
+import Link from "next/link";
 
 export default function ManufacturingPage() {
   const capabilities = [
@@ -12,6 +28,35 @@ export default function ManufacturingPage() {
 
   return (
     <main className="w-full flex-grow flex flex-col pt-20 sm:pt-24 lg:pt-32 bg-surface-container-lowest">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.khsimpex.com" },
+                { "@type": "ListItem", position: 2, name: "Manufacturing", item: "https://www.khsimpex.com/manufacturing" }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              serviceType: "Apparel Manufacturing",
+              provider: {
+                "@type": "LocalBusiness",
+                name: "KHS Impex"
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "Global"
+              },
+              description: "State-of-the-art apparel manufacturing facility offering computerized flat knitting, precision dyeing, automated assembly, and high-density embroidery."
+            }
+          ])
+        }}
+      />
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 lg:py-20 border-b border-ink/10">
         <div className="max-w-4xl">
           <span className="font-technical text-sm text-surface-tint font-bold tracking-widest uppercase mb-4 block">
@@ -96,7 +141,7 @@ export default function ManufacturingPage() {
                 3D CAD & Computerized Knitting
               </h3>
               <p className="font-body text-slate-600 leading-relaxed">
-                Approved tech packs are translated into proprietary CNC code by our technical designers. Our automated flat-knitting machines then execute the programs, knitting fully-fashioned panels, complex intarsia graphics, and zonal-tension shoe uppers with zero margin for human error.
+                Approved tech packs are translated into proprietary CNC code by our technical designers. Our <Link href="/technology" className="text-surface-tint hover:underline font-bold">automated flat-knitting machines</Link> then execute the programs, knitting fully-fashioned panels, complex intarsia graphics, and zonal-tension shoe uppers with zero margin for human error.
               </p>
             </div>
           </div>
@@ -135,12 +180,13 @@ export default function ManufacturingPage() {
                 AQL QC & Export Packaging
               </h3>
               <p className="font-body text-slate-600 leading-relaxed">
-                Final products undergo AQL 2.5/4.0 inspections for measurement tolerances and visual defects. Passed units are ironed, tagged with custom branded trims, bagged, and boxed for immediate global export logistics.
+                Final products undergo <Link href="/quality" className="text-surface-tint hover:underline font-bold">AQL 2.5/4.0 inspections</Link> for measurement tolerances and visual defects. Passed units are ironed, tagged with custom branded trims, bagged, and boxed for immediate global export logistics.
               </p>
             </div>
           </div>
         </div>
       </section>
+      <GlobalCTA />
     </main>
   );
 }

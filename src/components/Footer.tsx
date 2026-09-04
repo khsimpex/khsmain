@@ -28,7 +28,7 @@ export default function Footer() {
           <div className="flex items-center">
             <Image 
               src="/logo.png" 
-              alt="KHS IMPEX Logo" 
+              alt="KHS Impex precision textile manufacturing company logo" 
               width={300} 
               height={80} 
               className="w-auto h-8 sm:h-10 object-contain grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 

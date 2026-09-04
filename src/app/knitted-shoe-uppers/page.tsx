@@ -15,7 +15,32 @@ export default function KnittedShoeUppersPage() {
 
   return (
     <main className="w-full flex-grow flex flex-col pt-20 sm:pt-24 lg:pt-32 bg-surface-container-lowest">
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.khsimpex.com" },
+                { "@type": "ListItem", position: 2, name: "Knitted Shoe Uppers", item: "https://www.khsimpex.com/knitted-shoe-uppers" }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Product",
+              name: "3D Knitted Shoe Uppers (OEM Manufacturing)",
+              description: "Custom seamless 3D knitted shoe uppers for performance, casual, and safety footwear. Bulk OEM manufacturing with zero-waste technology.",
+              brand: {
+                "@type": "Brand",
+                name: "KHS Impex OEM"
+              },
+              category: "Footwear Manufacturing"
+            }
+          ])
+        }}
+      />
       {/* Hero Section */}
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 lg:py-20 border-b border-ink/10">
         <div className="max-w-4xl">
@@ -63,7 +88,7 @@ export default function KnittedShoeUppersPage() {
             </ul>
           </div>
           <div className="bg-ink/5 aspect-square flex items-center justify-center p-8 relative overflow-hidden">
-            <Image src="/Machinepark.jpeg" alt="machine park" fill className="object-cover" />
+            <Image src="/Machinepark.jpeg" alt="Expansive computerized 3D knitting machine park for high-volume seamless footwear production" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
           </div>
         </div>
       </section>
@@ -102,7 +127,7 @@ export default function KnittedShoeUppersPage() {
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           <div className="bg-ink/5 aspect-square flex items-center justify-center p-8 relative overflow-hidden">
-            <Image src={"/Manufacturing Process.jpeg"} alt="Manufacturing Process" fill />
+            <Image src="/Manufacturing Process.jpeg" alt="Detailed view of the automated 3D knitting process for seamless shoe uppers" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
           </div>
           <div>
             <h2 className="font-headline text-3xl sm:text-4xl uppercase text-ink font-bold mb-6">Why Partner With KHS Impex?</h2>

@@ -1,8 +1,48 @@
-"use client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Quality Assurance & AQL Testing | KHS Impex',
+  description: 'Rigorous AQL inspection protocols, dimensional stability testing, and ISO 9001 compliant in-house laboratory testing for premium apparel.',
+  alternates: {
+    canonical: '/quality',
+  },
+  openGraph: {
+    title: 'Quality Assurance & AQL Testing | KHS Impex',
+    description: 'Rigorous AQL inspection protocols, dimensional stability testing, and ISO 9001 compliant in-house laboratory testing for premium apparel.',
+    url: '/quality',
+  },
+};
+
+import GlobalCTA from "../../components/GlobalCTA";
+import Link from "next/link";
 
 export default function QualityPage() {
   return (
     <main className="w-full flex-grow flex flex-col pt-20 sm:pt-24 lg:pt-32 bg-surface-container-lowest">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.khsimpex.com" },
+                { "@type": "ListItem", position: 2, name: "Quality", item: "https://www.khsimpex.com/quality" }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              mainEntity: {
+                "@type": "Thing",
+                name: "Quality Assurance & AQL Testing",
+                description: "Rigorous AQL inspection protocols, dimensional stability testing, and ISO 9001 compliant in-house laboratory testing for premium apparel."
+              }
+            }
+          ])
+        }}
+      />
       <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-12 lg:py-20 border-b border-ink/10">
         <div className="max-w-4xl">
           <span className="font-technical text-sm text-surface-tint font-bold tracking-widest uppercase mb-4 block">
@@ -34,7 +74,7 @@ export default function QualityPage() {
            <div className="bg-ink text-white border border-ink p-8 sm:p-12 flex flex-col justify-center">
              <h2 className="font-headline text-2xl font-bold uppercase text-white mb-4">Certifications & Compliance</h2>
              <p className="font-body text-white/70 mb-4 leading-relaxed">
-               We operate under strict global compliance frameworks, ensuring ethical manufacturing, safe working conditions, and completely non-toxic, eco-friendly material outputs.
+               We operate under strict global compliance frameworks, ensuring ethical manufacturing, safe working conditions, and completely non-toxic, <Link href="/sustainability" className="text-surface-tint hover:underline font-bold">eco-friendly material outputs</Link>.
              </p>
              <ul className="space-y-2 font-body text-surface-tint font-medium">
                <li>• ISO 9001 Compliant Operations</li>
@@ -109,6 +149,7 @@ export default function QualityPage() {
           </div>
         </div>
       </section>
+      <GlobalCTA />
     </main>
   );
 }
